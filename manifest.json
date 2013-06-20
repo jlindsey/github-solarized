@@ -9,14 +9,14 @@
     "16": "icons/16.png"
   },
   "background": {
-    "page": "background.html"
+    "page": "pages/background.html"
   },
   "page_action": {
     "default_icon": {
       "38": "icons/38.png"
     },
     "default_title": "Github Solarized",
-    "default_popup": "popup.html"
+    "default_popup": "pages/popup.html"
   },
   "permissions": [
     "webNavigation",
