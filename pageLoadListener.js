@@ -4,9 +4,9 @@ var urlFilter = {
   ]
 };
 
-function ensureStylesheetIsOnPage(details) {
-  chrome.tabs.insertCSS(details.tabId, { file: 'githubSolarized.css' });
+function doPageAction(details) {
+  chrome.pageAction.show(details.tabId);
 }
 
-chrome.webNavigation.onHistoryStateUpdated.addListener(ensureStylesheetIsOnPage, urlFilter);
-chrome.webNavigation.onCommitted.addListener(ensureStylesheetIsOnPage, urlFilter);
+chrome.webNavigation.onHistoryStateUpdated.addListener(doPageAction, urlFilter);
+chrome.webNavigation.onCommitted.addListener(doPageAction, urlFilter);
