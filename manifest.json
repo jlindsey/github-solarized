@@ -1,0 +1,19 @@
+{
+  "name": "Github Solarized",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "Apply Ethan Schoonover's wonderful Solarized color theme to Github code views.",
+  "background": {
+    "page": "background.html"
+  },
+  "page_action": {
+    "default_title": "Github Solarized"
+  },
+  "permissions": [
+    "webNavigation",
+    "*://github.com/*"
+  ],
+  "web_accessible_resources": [
+    "githubSolarized.css"
+  ]
+}
