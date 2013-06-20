@@ -4,8 +4,7 @@ grunt.initConfig({
   sass: {
     styles: {
       files: {
-        'styles/gruntSolarizedDark.css': 'styles/githubSolarizedDark.scss',
-        'styles/gruntSolarizedLight.css': 'styles/githubSolarizedLight.scss'
+        'styles/githubSolarized.css': 'styles/githubSolarized.scss'
       }
     }
   },
@@ -15,11 +14,18 @@ grunt.initConfig({
       files: ['styles/*.scss'],
       tasks: ['sass']
     }
+  },
+
+  clean: {
+    css: {
+      src: ['styles/*.css']
+    }
   }
 });
 
 grunt.loadNpmTasks('grunt-contrib-sass');
 grunt.loadNpmTasks('grunt-contrib-watch');
+grunt.loadNpmTasks('grunt-contrib-clean');
 
 grunt.registerTask('default', ['sass']);
 grunt.registerTask('dev', ['sass', 'watch']);
