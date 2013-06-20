@@ -11,6 +11,13 @@
   "background": {
     "page": "pages/background.html"
   },
+  "content_scripts": [
+    {
+      "matches": ["*://github.com/*/blob/*"],
+      "js": ["vendor/jquery-2.0.2.min.js", "pages/contentScript.js"],
+      "css": ["styles/githubSolarized.css"]
+    }
+  ],
   "page_action": {
     "default_icon": {
       "38": "icons/38.png"
@@ -20,6 +27,11 @@
   },
   "permissions": [
     "webNavigation",
+    "storage",
     "*://github.com/*"
+  ],
+  "web_accessible_resources": [
+    "styles/githubSolarizedLight.css",
+    "styles/githubSolarizedDark.css"
   ]
 }

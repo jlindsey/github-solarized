@@ -1,0 +1,99 @@
+$base03:    #002b36;
+$base02:    #073642;
+$base01:    #586e75;
+$base00:    #657b83;
+$base0:     #839496;
+$base1:     #93a1a1;
+$base2:     #eee8d5;
+$base3:     #fdf6e3;
+$yellow:    #b58900;
+$orange:    #cb4b16;
+$red:       #dc322f;
+$magenta:   #d33682;
+$violet:    #6c71c4;
+$blue:      #268bd2;
+$cyan:      #2aa198;
+$green:     #859900;
+
+@mixin rebase($rebase03, $rebase02, $rebase01, $rebase00, $rebase0, $rebase1, $rebase2, $rebase3)
+{
+  background-color: $rebase03;
+
+  // Generic
+  .k { color: $cyan; }            // Keyword
+  .l { color: $rebase1; }         // Literal
+  .m { color: $violet; }          // Number
+  .n { color: $rebase0; }         // Name
+  .o { color: $rebase0; }         // Operator
+  .p { color: $rebase0; }         // Punctuation
+  .s { color: $red; }             // String
+  .w { color: $rebase02; }        // Whitespace
+  .ge { font-style: italic; }     // Generic emphasis
+  .gs { font-weight: bold; }      // Generic strong
+
+  // Comments
+  .c { color: $rebase01; }        // Comment
+  .cm { color: $rebase01; }       // Multiline
+  .cp { color: $rebase01; }       // Preprocessor
+  .c1 { color: $rebase01; }       // Single-line
+  .cs { color: $rebase01; }       // Special
+
+  // Keywords
+  .kc { color: $rebase1; }        // Constant
+  .kd { color: $rebase1; }        // Declaration
+  .kn { color: $magenta; }        // Namespace
+  .kp { color: $rebase1; }        // Pseudo
+  .kr { color: $rebase1; }        // Reserved
+  .kt { color: $rebase1; }        // Type
+  .ow { color: $rebase1; }        // Operator Words
+
+  // Names
+  .bp { color: $rebase0; }        // Built-in (Pseudo)
+  .na { color: $rebase0; }        // Attribute
+  .nb { color: $rebase2; }        // Built-in
+  .nc { color: $blue; }           // Class
+  .nd { color: $blue; }           // Decorator
+  .ni { color: $rebase0; }        // Entity
+  .ne { color: $red; }            // Exception
+  .nf { color: $green; }          // Function
+  .nl { color: $rebase0; }        // Label
+  .nn { color: $magenta; }        // Namespace
+  .nt { color: $rebase00; }       // Tag
+  .nv { color: $rebase2; }        // Variable
+  .nx { color: $rebase0; }        // Other
+  .py { color: $rebase0; }        // Property
+
+  // Numbers
+  .il { color: $violet; }         // Integer Literal Long
+  .mf { color: $violet; }         // Float
+  .mh { color: $violet; }         // Hex
+  .mi { color: $violet; }         // Integer
+  .mo { color: $violet; }         // Oct
+
+  // Strings
+  .s1 { color: $yellow; }         // Single-quotes
+  .s2 { color: $yellow; }         // Double-quotes
+  .sb { color: $yellow; }         // Backtick
+  .sc { color: $yellow; }         // Char
+  .sd { color: $rebase01; }       // Doc
+  .se { color: $orange; }         // Escape
+  .sh { color: $yellow; }         // Heredoc
+  .si { color: $orange; }         // Interpolation
+  .sr { color: $red; }            // Regex
+  .ss { color: $violet; }         // Symbol
+  .sx { color: $yellow; }         // Other
+
+  // Variables
+  .vc { color: $blue; }           // Class
+  .vg { color: $base3; }          // Global
+  .vi { color: $cyan; }           // Instance
+
+}
+
+div.solarized {
+  color-profile: sRGB;
+  rendering-indent: auto;
+}
+
+div.solarized.light { @include rebase($base3, $base2, $base1, $base0, $base00, $base01, $base02, $base03) }
+div.solarized.dark  { @include rebase($base03, $base02, $base01, $base00, $base0, $base1, $base2, $base3) }
